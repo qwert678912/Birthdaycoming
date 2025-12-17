@@ -16,6 +16,7 @@ function App() {
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft(targetDate));
     }, 1000);
+
     return () => clearInterval(timer);
   }, []);
 
@@ -30,26 +31,27 @@ function App() {
       <div className="max-w-md mx-auto space-y-10 pt-10">
 
         {/* Header */}
-       <div className="text-center space-y-4">
-  <h1 className="text-4xl sm:text-5xl font-extrabold tracking-wide 
-    bg-gradient-to-r from-pink-400 via-rose-500 to-pink-600 
-    bg-clip-text text-transparent drop-shadow-lg">
-    Priyu’s Birthday is Coming 🤍
-  </h1>
+        <div className="text-center space-y-4">
+          <h1
+            className="text-4xl sm:text-5xl font-extrabold tracking-wide 
+            bg-gradient-to-r from-pink-400 via-rose-500 to-pink-600 
+            bg-clip-text text-transparent drop-shadow-lg"
+          >
+            Priyu’s Birthday is Coming 🤍
+          </h1>
 
-  <p className="text-base sm:text-lg font-medium text-gray-300 leading-relaxed">
-    Happy Birthday in advance,
-    <span className="block mt-1 text-pink-400 font-semibold tracking-wide">
-      pillu ji • priyu ji • madam ji • pookie ji • bilara ji ❤️🥺
-    </span>
-  </p>
-</div>
+          <p className="text-base sm:text-lg font-medium text-gray-300 leading-relaxed">
+            Happy Birthday in advance,
+            <span className="block mt-1 text-pink-400 font-semibold tracking-wide">
+              pillu ji • priyu ji • madam ji • pookie ji • bilara ji ❤️🥺
+            </span>
+          </p>
+        </div>
 
-          <div className="flex justify-center gap-2 animate-pulse">
-            <Heart className="text-pink-500 fill-pink-500" />
-            <Heart className="text-pink-500 fill-pink-500" />
-            <Heart className="text-pink-500 fill-pink-500" />
-          </div>
+        <div className="flex justify-center gap-2 animate-pulse">
+          <Heart className="text-pink-500 fill-pink-500" />
+          <Heart className="text-pink-500 fill-pink-500" />
+          <Heart className="text-pink-500 fill-pink-500" />
         </div>
 
         {/* Slideshow */}
