@@ -20,9 +20,9 @@ function App() {
   }, []);
 
   const images = [
-    'https://i.pinimg.com/736x/03/11/83/031183f5a7517a81aa4c781bc7deb010.jpg',
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNa5lF9_n_oS1L2Y787JyFF9iWa_qG4PNFvJLdoUkmolXgg3yAKkf5XG2WMgbwthwsdEY&usqp=CAU',
-    'https://www.animalhumanesociety.org/sites/default/files/styles/animal_450x330/public/adoption/images/large/2024/10/22/98ec35ad-65db-4097-a9b1-9be50edd102b.jpg',
+    'https://i.pinimg.com/736x/c7/cd/33/c7cd3342ea98b431b7d6a69752b97ccc.jpg',
+    'https://i.pinimg.com/736x/6a/8a/07/6a8a0760d5a9fe50b354878692f20f35.jpg',
+    'https://i.pinimg.com/736x/16/3c/d3/163cd3adf4e0090bc60f98ebd9d9f475.jpg',
   ];
 
   return (
@@ -30,14 +30,20 @@ function App() {
       <div className="max-w-md mx-auto space-y-10 pt-10">
 
         {/* Header */}
-        <div className="text-center space-y-3">
-          <h1 className="text-3xl font-bold bg-gradient-to-r from-pink-400 to-rose-500 bg-clip-text text-transparent">
-            Priyu ka Birthday aarha hai 🤩
-          </h1>
+       <div className="text-center space-y-4">
+  <h1 className="text-4xl sm:text-5xl font-extrabold tracking-wide 
+    bg-gradient-to-r from-pink-400 via-rose-500 to-pink-600 
+    bg-clip-text text-transparent drop-shadow-lg">
+    Priyu’s Birthday is Coming 🤍
+  </h1>
 
-          <p className="text-sm text-gray-300">
-            Happy Birthday in advance pillu ji(priyu ji. madam ji, pookie ji, bilara ji)❤️🥺😋
-          </p>
+  <p className="text-base sm:text-lg font-medium text-gray-300 leading-relaxed">
+    Happy Birthday in advance,
+    <span className="block mt-1 text-pink-400 font-semibold tracking-wide">
+      pillu ji • priyu ji • madam ji • pookie ji • bilara ji ❤️🥺
+    </span>
+  </p>
+</div>
 
           <div className="flex justify-center gap-2 animate-pulse">
             <Heart className="text-pink-500 fill-pink-500" />
