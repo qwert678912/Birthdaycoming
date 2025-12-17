@@ -3,91 +3,92 @@ import { Heart } from 'lucide-react';
 import { CountdownCard } from './components/CountdownCard';
 import { calculateTimeLeft } from './utils/countdown';
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import { Navigation, Autoplay } from 'swiper/modules';
 
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
 
 function App() {
-  const targetDate = new Date('2025-01-24');
+  const targetDate = new Date('2026-01-24');
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(targetDate));
 
   useEffect(() => {
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft(targetDate));
     }, 1000);
-
     return () => clearInterval(timer);
   }, []);
 
   const images = [
     'https://i.pinimg.com/736x/03/11/83/031183f5a7517a81aa4c781bc7deb010.jpg',
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNa5lF9_n_oS1L2Y787JyFF9iWa_qG4PNFvJLdoUkmolXgg3yAKkf5XG2WMgbwthwsdEY&usqp=CAU',
-    'https://www.animalhumanesociety.org/sites/default/files/styles/animal_450x330/public/adoption/images/large/2024/10/22/98ec35ad-65db-4097-a9b1-9be50edd102b.jpg?h=a551cb13&itok=XU7r0FBs',
+    'https://www.animalhumanesociety.org/sites/default/files/styles/animal_450x330/public/adoption/images/large/2024/10/22/98ec35ad-65db-4097-a9b1-9be50edd102b.jpg',
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-pink-200 to-pink-300 p-4">
-      <div className="max-w-md mx-auto space-y-8 pt-8">
+    <div className="min-h-screen bg-gradient-to-b from-black via-[#120016] to-[#1a001f] text-white p-4">
+      <div className="max-w-md mx-auto space-y-10 pt-10">
+
         {/* Header */}
-        <div className="text-center space-y-2">
-          <h1 className="text-3xl font-bold text-pink-600">
-            Priyu ka Birthday aarha hai 🤩 Happy Birthday in advance priyu 🥺💖
+        <div className="text-center space-y-3">
+          <h1 className="text-3xl font-bold bg-gradient-to-r from-pink-400 to-rose-500 bg-clip-text text-transparent">
+            Priyu ka Birthday aarha hai 🤩
           </h1>
-          <div className="flex justify-center space-x-2">
-            <Heart className="text-pink-500 fill-pink-500" size={24} />
-            <Heart className="text-pink-500 fill-pink-500" size={24} />
-            <Heart className="text-pink-500 fill-pink-500" size={24} />
+
+          <p className="text-sm text-gray-300">
+            Happy Birthday in advance pillu ji(priyu ji. madam ji, pookie ji, bilara ji)❤️🥺😋
+          </p>
+
+          <div className="flex justify-center gap-2 animate-pulse">
+            <Heart className="text-pink-500 fill-pink-500" />
+            <Heart className="text-pink-500 fill-pink-500" />
+            <Heart className="text-pink-500 fill-pink-500" />
           </div>
         </div>
 
-        {/* Pookie Slideshow */}
-        <div className="rounded-2xl overflow-hidden shadow-lg">
+        {/* Slideshow */}
+        <div className="rounded-3xl overflow-hidden shadow-[0_0_30px_rgba(236,72,153,0.25)]">
           <Swiper
-           
-            navigation={true}
+            navigation
             autoplay={{
-              delay: 1500, 
-              disableOnInteraction: false, // Continue autoplay after user interaction
+              delay: 1800,
+              disableOnInteraction: false,
             }}
-            modules={[Pagination, Navigation, Autoplay]}
-            className="mySwiper"
+            modules={[Navigation, Autoplay]}
           >
-            {images.map((image, index) => (
-              <SwiperSlide key={index}>
+            {images.map((img, i) => (
+              <SwiperSlide key={i}>
                 <img
-                  src={image}
-                  alt={`Slide ${index + 1}`}
-                  className="w-full h-64 object-cover"
+                  src={img}
+                  alt={`slide-${i}`}
+                  className="w-full h-64 object-cover grayscale hover:grayscale-0 transition duration-700"
                 />
               </SwiperSlide>
             ))}
           </Swiper>
-          <h1 className="text-3xl font-bold text-pink-600 text-center mt-4">
+
+          <h2 className="text-center mt-4 text-xl font-semibold text-pink-400">
             Coming in 💖..
-          </h1>
+          </h2>
         </div>
 
-        {/* Countdown Cards */}
-        <div className="grid grid-cols-2 gap-4 justify-items-center">
+        {/* Countdown */}
+        <div className="grid grid-cols-2 gap-4">
           <CountdownCard value={timeLeft.months} label="Months" />
           <CountdownCard value={timeLeft.days} label="Days" />
           <CountdownCard value={timeLeft.hours} label="Hours" />
           <CountdownCard value={timeLeft.minutes} label="Minutes" />
         </div>
 
-        {/* Seconds Card */}
         <div className="flex justify-center">
           <CountdownCard value={timeLeft.seconds} label="Seconds" />
         </div>
 
         {/* Footer */}
-        <div className="text-center text-pink-600 font-medium">
-          <p>Mujhe to ab intejar nhi horha 🥺🎉</p>
+        <div className="text-center text-pink-400 text-sm">
+          Isbaara mushkil hai mnana but we will try...abhi to aane do birthday👑❤️
         </div>
+
       </div>
     </div>
   );
